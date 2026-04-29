@@ -29,8 +29,8 @@ Welcome, AI Collaborator. This project is optimized for agentic development. To 
 - **Native over Plugin:** Prefer Neovim 0.12 core features over adding new plugins.
 
 ## 6. The "Principal" Checklist
-This project is a high-transparency substrate for the "Principal Engineer" (read `.agents/docs/philosophy.md`). Before ending your session, ensure:
+This project is a high-transparency substrate for the "Principal Engineer" (read [MANIFESTO.md](./MANIFESTO.md)). Before ending your session, ensure:
 - **The "Why" in the Comments:** Did you document the intent behind radical architectural choices?
 - **The "Escape Hatch":** Is the structure easy for a Principal to fork or override?
 - **The "Telemetry of Failure":** Is the error handling highly observable? Does it explain the "Physics" of the failure?
-- **The Laboratory Folder:** Are we honoring the "Living Laboratory" by keeping experimental logic isolated and visible?
+- **The Laboratory Folder:** Are we honoring the "Living Laboratory" by keeping experimental logic isolated and visible in the Manifesto?

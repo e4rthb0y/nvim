@@ -1,11 +1,8 @@
-# Neovim Configuration: Premium DX (The Principal's Substrate)
+# Neovim Configuration: Premium DX
 
-This is not a black-box framework. This is a **high-transparency substrate for the Principal Engineer**—an intentionally "incomplete" living laboratory that rejects hidden complexity in favor of **Radical Observability** and **Utility**. We use Neovim 0.12+ core primitives to deliver a "Premium" developer experience where the signal-to-noise ratio is optimized, and every architectural choice is laid bare for you to test, fork, or override.
+A high-performance, standalone Neovim configuration optimized for **Neovim 0.12+**. 
 
-## 🧪 Experiments / Under Construction
-
-This project embraces the "Incomplete Truth." If a workflow survives the "Physics" of daily use, it stays. Here is what we are currently testing in the laboratory:
-- **Taskwarrior / Timewarrior Integration:** Exploring seamless terminal and buffer-based workflows to manage tasks and track time directly from the editor without breaking focus.
+This is a high-transparency substrate for the **Principal Engineer**. See the [MANIFESTO.md](./MANIFESTO.md) for our Core Mission, Strategic Pillars, and the active **Laboratory Experiments**.
 
 ## 🚀 Key Features (Neovim 0.12+)
 
