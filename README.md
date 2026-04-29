@@ -1,6 +1,11 @@
-# Neovim Configuration: Premium DX
+# Neovim Configuration: Premium DX (The Principal's Substrate)
 
-A high-performance, standalone Neovim configuration optimized for **Neovim 0.12+**. This setup leverages core primitives to provide a "Premium" developer experience with minimal plugin bloat.
+This is not a black-box framework. This is a **high-transparency substrate for the Principal Engineer**—an intentionally "incomplete" living laboratory that rejects hidden complexity in favor of **Radical Observability** and **Utility**. We use Neovim 0.12+ core primitives to deliver a "Premium" developer experience where the signal-to-noise ratio is optimized, and every architectural choice is laid bare for you to test, fork, or override.
+
+## 🧪 Experiments / Under Construction
+
+This project embraces the "Incomplete Truth." If a workflow survives the "Physics" of daily use, it stays. Here is what we are currently testing in the laboratory:
+- **Taskwarrior / Timewarrior Integration:** Exploring seamless terminal and buffer-based workflows to manage tasks and track time directly from the editor without breaking focus.
 
 ## 🚀 Key Features (Neovim 0.12+)
 
