@@ -1,6 +1,8 @@
 # Neovim Configuration: Premium DX
 
-A high-performance, standalone Neovim configuration optimized for **Neovim 0.12+**. This setup leverages core primitives to provide a "Premium" developer experience with minimal plugin bloat.
+A high-performance, standalone Neovim configuration optimized for **Neovim 0.12+**. 
+
+This is a high-transparency substrate for the **Principal Engineer**. See the [MANIFESTO.md](./MANIFESTO.md) for our Core Mission, Strategic Pillars, and the active **Laboratory Experiments**.
 
 ## 🚀 Key Features (Neovim 0.12+)
 

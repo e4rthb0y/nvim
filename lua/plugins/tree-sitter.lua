@@ -27,7 +27,10 @@ return {
                     'python',
                 },
 
-                highlight = { 
+                -- Note: We enable highlight here so that nvim-treesitter
+                -- can manage the integration, but we prioritize native
+                -- 0.12 features where possible.
+                highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
                 },
