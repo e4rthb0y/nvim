@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Check for dependencies
+check_dep() {
+    if command -v "$1" >/dev/null 2>&1; then
+        echo "✅ $1 is installed"
+    else
+        echo "❌ $1 is missing. $2"
+    fi
+}
+
+echo "Starting Neovim Configuration Doctor..."
+echo "--------------------------------------"
+
+check_dep "rg" "Install ripgrep (rg) for better searching."
+check_dep "fd" "Install fd for better file finding."
+check_dep "fzf" "Install fzf for fuzzy finding."
+check_dep "node" "Install Node.js for LSPs."
+check_dep "python3" "Install Python 3."
+check_dep "ruby" "Install Ruby."
+check_dep "stylua" "Install StyLua for formatting."
+check_dep "selene" "Install Selene for linting."
+
+echo "--------------------------------------"
+echo "Doctor check complete."

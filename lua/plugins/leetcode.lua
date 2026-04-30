@@ -1,19 +1,19 @@
 return {
-    "kawre/leetcode.nvim",
-    build = ":TSUpdate html",
+    'kawre/leetcode.nvim',
+    build = ':TSUpdate html',
     dependencies = {
-        "nvim-telescope/telescope.nvim",
-        "nvim-lua/plenary.nvim",
-        "MunifTanjim/nui.nvim",
-        "nvim-tree/nvim-web-devicons",
+        'nvim-telescope/telescope.nvim',
+        'nvim-lua/plenary.nvim',
+        'MunifTanjim/nui.nvim',
+        'nvim-tree/nvim-web-devicons',
     },
     opts = {
-        arg = "leetcode.nvim",
-        lang = "python3",
+        arg = 'leetcode.nvim',
+        lang = 'python3',
 
         storage = {
-            home = vim.fn.stdpath("data") .. "/leetcode",
-            cache = vim.fn.stdpath("cache") .. "/leetcode",
+            home = vim.fn.stdpath('data') .. '/leetcode',
+            cache = vim.fn.stdpath('cache') .. '/leetcode',
         },
     },
 }
