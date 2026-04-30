@@ -67,15 +67,14 @@ vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
 
 -- stylua: ignore end
 
-
 -- Logs
-vim.lsp.set_log_level("WARN")
+vim.lsp.set_log_level('WARN')
 
 -- Prune log if it exceeds 100MB on startup
 local lsp_log_path = vim.lsp.get_log_path()
-local f = io.open(lsp_log_path, "r")
+local f = io.open(lsp_log_path, 'r')
 if f then
-    local size = f:seek("end")
+    local size = f:seek('end')
     f:close()
     if size > 100 * 1024 * 1024 then
         os.remove(lsp_log_path)

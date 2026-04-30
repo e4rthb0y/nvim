@@ -114,9 +114,25 @@ return {
     config = config,
     cmd = 'Neotree',
     keys = {
-        { '<leader>e', '<cmd>Neotree toggle current reveal_force_cwd<cr>', desc = 'Neo-tree Toggle' },
-        { '|', '<cmd>Neotree focus filesystem float reveal toggle<cr>', desc = 'Neo-tree Float' },
-        { '<leader>b', '<cmd>Neotree toggle show buffers right<cr>', desc = 'Neo-tree Buffers' },
-        { 'gs', '<cmd>Neotree float git_status<cr>', desc = 'Neo-tree Git Status' },
+        {
+            '<leader>e',
+            '<cmd>Neotree toggle current reveal_force_cwd<cr>',
+            desc = 'Neo-tree Toggle',
+        },
+        {
+            '|',
+            '<cmd>Neotree focus filesystem float reveal toggle<cr>',
+            desc = 'Neo-tree Float',
+        },
+        {
+            '<leader>b',
+            '<cmd>Neotree toggle show buffers right<cr>',
+            desc = 'Neo-tree Buffers',
+        },
+        {
+            'gs',
+            '<cmd>Neotree float git_status<cr>',
+            desc = 'Neo-tree Git Status',
+        },
     },
 }
