@@ -35,8 +35,13 @@ vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { silent = true })
 vim.keymap.set('t', '<A-[>', '<Esc>')
 vim.keymap.set('t', '<Esc>', '<c-\\><c-n>')
 
--- Navigatin between terminal windows
+-- Navigation between terminal windows
 vim.keymap.set('t', '<A-h>', '<c-\\><c-n><c-w>h')
 vim.keymap.set('t', '<A-j>', '<c-\\><c-n><c-w>j')
 vim.keymap.set('t', '<A-k>', '<c-\\><c-n><c-w>k')
 vim.keymap.set('t', '<A-l>', '<c-\\><c-n><c-w>l')
+
+-- Explicitly pass modified Enter keys to terminal
+vim.keymap.set('t', '<C-CR>', '<C-CR>')
+vim.keymap.set('t', '<S-CR>', '<S-CR>')
+vim.keymap.set('t', '<C-S-CR>', '<C-S-CR>')
