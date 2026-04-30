@@ -19,3 +19,9 @@
 - [x] **Task:** Create init.sh
   - **Description:** Implement a health check script for the environment.
   - **Test:** `./init.sh`
+
+## Future Tasks: Phase 2 - Technical Hardening
+
+- [ ] **Task:** Selene Linter Integration
+  - **Description:** Set up Selene for Lua linting with a reliable Neovim standard library definition.
+  - **Status:** Skipped for now due to library resolution issues; requires finding a better way to manage `std` definitions.
