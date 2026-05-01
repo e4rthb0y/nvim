@@ -31,7 +31,7 @@ This document outlines the design and organization of this standalone Neovim con
 ## Key Design Principles
 
 1. **Portability:** The configuration uses `vim.fn.exepath` to find binaries, making it easy to clone and use on any machine without hardcoded paths.
-2. **Native-First:** We prioritize Neovim 0.12's core features (UI2, built-in Treesitter, native folding) over plugin alternatives to keep the setup fast and stable.
+2. **Native-First (Pragmatic):** We prioritize Neovim's core features (UI2, built-in Treesitter, native folding) when they provide a clean alternative to plugins. However, for specialized tasks like dependency management and complex formatting, we prefer industry-standard tools like `conform.nvim` to ensure robustness, scalability, and ease of use.
 3. **Modular Plugins:** Each plugin has its own file in `lua/plugins/` for easy management and troubleshooting.
 4. **LSP/Treesitter Balance:** We use the native Treesitter engine for structural syntax and LSP for contextual semantic tokens, balancing the two via highlight priorities.
 
