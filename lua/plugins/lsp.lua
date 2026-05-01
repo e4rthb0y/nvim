@@ -6,6 +6,7 @@ local function set_lspconfig()
 
     local servers = require('lsp.servers')
     local formatters = require('lsp.formatters')
+    local linters = require('lsp.linters')
 
     local function lsp_server_handler(server_name)
         local has_custom_opts, server_opts =
@@ -28,7 +29,8 @@ local function set_lspconfig()
     })
 
     -- Install additional tools (formatters, etc)
-    for _, tool in ipairs(formatters.to_install()) do
+    local tools = vim.list_extend(formatters.to_install(), linters.to_install())
+    for _, tool in ipairs(tools) do
         local p = mason_registry.get_package(tool)
         if not p:is_installed() then
             p:install()

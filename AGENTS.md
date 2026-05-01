@@ -9,9 +9,13 @@ Welcome, AI Collaborator. This project is optimized for agentic development. To 
 
 ## 2. Startup Sequence
 1. **Verify Environment:** Run `./init.sh` to ensure tools (`nvim`, `gh`, `git`, etc.) are healthy.
-2. **Claim Task:** If picking a new issue, assign it to yourself: `gh issue edit <id> --add-assignee "@me"`.
-3. **Branch Out:** Create a feature branch: `git checkout -b feature/issue-<id>`.
-4. **Decompose & Sync:** Decompose the Issue into atomic steps in a local `.agents/TODO.md` file (ignored by git). Sync this breakdown to the GitHub Issue as a comment: `gh issue comment <id> --body "### Atomic Task Breakdown\n- [ ] Task 1..."`.
+2. **Setup Identity:** You MUST source the environment setup script to authenticate with GitHub and configure your Git identity. It is available globally at `~/.agent-env.sh`:
+   ```bash
+   source ~/.agent-env.sh
+   ```
+3. **Claim Task:** If picking a new issue, assign it to yourself: `gh issue edit <id> --add-assignee "@me"`.
+4. **Branch Out:** Create a feature branch: `git checkout -b feature/issue-<id>`.
+5. **Decompose & Sync:** Decompose the Issue into atomic steps in a local `.agents/TODO.md` file (ignored by git). Sync this breakdown to the GitHub Issue as a comment: `gh issue comment <id> --body "### Atomic Task Breakdown\n- [ ] Task 1..."`.
 
 ## 3. Execution Cycle
 1. **Iterate:** Work through the atomic tasks in `.agents/TODO.md`.
