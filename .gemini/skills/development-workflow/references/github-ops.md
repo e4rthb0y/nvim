@@ -3,12 +3,12 @@
 Technical commands for managing the development lifecycle.
 
 ## Task Discovery
-- **List Assigned**: `gh issue list --assignee "@me"`
+- **List My Active Tasks**: `gh issue list --label "agent:assigned"`
 - **List Backlog**: `gh issue list`
 - **View Details**: `gh issue view <id>`
 
 ## Task Lifecycle
-- **Claim Task**: `gh issue edit <id> --add-assignee "@me"`
+- **Claim Task**: `gh issue edit <id> --add-label "agent:assigned"`
 - **Start Progress**: `gh issue comment <id> --body "Starting work on this task. Follow progress in PR [link]."`
 - **Atomic Breakdown**: Comment on the issue: `gh issue comment <id> --body "### Atomic Task Breakdown\n- [ ] Task 1..."`
 

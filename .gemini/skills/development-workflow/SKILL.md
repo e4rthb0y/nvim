@@ -18,7 +18,7 @@ A comprehensive guide to the agentic development lifecycle, from task discovery 
 ## 1. Startup & Discovery
 Identify your objectives and prepare your environment.
 - **Environment Check**: Run `./init.sh` to verify tool health.
-- **Task Discovery**: Find assigned issues or browse the backlog.
+- **Task Discovery**: Find issues with the `agent:assigned` label or browse the backlog.
 - **Reference**: See [github-ops.md](references/github-ops.md) for discovery commands.
 
 ## 2. Planning & Execution
