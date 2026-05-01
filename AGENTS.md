@@ -1,43 +1,15 @@
 # Gemini Agent Protocol: Neovim Config
 
-Welcome, AI Collaborator. This project is optimized for agentic development. To maintain consistency across sessions, you MUST follow the **Streamlined Gemini Agent Protocol**.
+Welcome, AI Collaborator. This project is optimized for agentic development. 
 
-## 1. Context Entrypoint
-- **Active Tasks:** Run `gh issue list --assignee "@me"` to see your assigned tasks. If none, run `gh issue list` to see the backlog.
-- **History:** Run `git log -n 5` to see what was recently completed.
-- **Architecture:** Read `.agents/docs/architecture.md` to understand the code structure.
+## The Development Workflow Skill
+To maintain consistency, you MUST follow the **Development Workflow** skill. 
 
-## 2. Startup Sequence
-1. **Verify Environment:** Run `./init.sh` to ensure tools (`nvim`, `gh`, `git`, etc.) are healthy.
-2. **Setup Identity:** You MUST source the environment setup script to authenticate with GitHub and configure your Git identity. It is available globally at `~/.agent-env.sh`:
-   ```bash
-   source ~/.agent-env.sh
-   ```
-3. **Claim Task:** If picking a new issue, assign it to yourself: `gh issue edit <id> --add-assignee "@me"`.
-4. **Branch Out:** Create a feature branch: `git checkout -b feature/issue-<id>`.
-5. **Decompose & Sync:** Decompose the Issue into atomic steps in a local `.agents/TODO.md` file (ignored by git). Sync this breakdown to the GitHub Issue as a comment: `gh issue comment <id> --body "### Atomic Task Breakdown\n- [ ] Task 1..."`.
+### How to use:
+1. Ensure the skill is activated: `activate_skill(name="development-workflow")`.
+2. Follow the lifecycle defined in the skill's `SKILL.md`.
+3. Reference `references/github-ops.md` for technical commands.
+4. Reference `references/standards.md` for project principles and the "Principal Checklist".
 
-## 3. Execution Cycle
-1. **Iterate:** Work through the atomic tasks in `.agents/TODO.md`.
-2. **Format:** Ensure all modified Lua files are formatted using `stylua`. The project uses a native autocommand on save, but you MUST manually verify the formatting or run `stylua --config-path .stylua.toml <file>` if unsure.
-3. **Verify:** Run the `Test` command specified for each atomic task.
-3. **Sync Progress:** Periodically update the GitHub Issue comment or body to reflect progress.
-4. **Commit:** Use conventional commits. Always include `Fixes #<id>` in the message or PR body.
-
-## 4. Session Shutdown
-1. **Submit Work:** Push your branch (`git push origin HEAD`) and create a PR: `gh pr create --title "[Task Name]" --body "Fixes #<id>\n\nDetails..."`.
-2. **Handoffs:** If stopping mid-task, push your branch and add a comment with the current state of `.agents/TODO.md`: `gh issue comment <id> --body "> Note: [Context for next agent]\n\n### Current Progress\n- [x] Task 1\n- [ ] Task 2..."`.
-
-## 5. Security & Principles
-- **Root Lock:** Never read/write files outside of this directory.
-- **No Hardcoding:** Ensure all paths are dynamically resolved.
-- **Convention First:** Adhere to existing Lua structure and `lazy.nvim` patterns.
-- **PR-First:** All changes MUST be submitted via Pull Request for human review.
-- **Git Identity:** Ensure `user.name` and `user.email` are configured in the environment.
-
-## 6. The "Principal" Checklist
-This project is a high-transparency substrate for the "Principal Engineer" (read [MANIFESTO.md](./MANIFESTO.md)). Before ending your session, ensure:
-- **The "Why" in the Comments:** Did you document the intent behind radical architectural choices?
-- **The "Escape Hatch":** Is the structure easy for a Principal to fork or override?
-- **The "Telemetry of Failure":** Is the error handling highly observable? Does it explain the "Physics" of the failure?
-- **The Laboratory Folder:** Are we honoring the "Living Laboratory" by keeping experimental logic isolated and visible in the Manifesto?
+## Core Mandate
+This project is a high-transparency substrate for the "Principal Engineer" (read [MANIFESTO.md](./MANIFESTO.md)). Every change must prioritize readability, observability, and the "Telemetry of Failure".
