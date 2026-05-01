@@ -3,7 +3,6 @@
 Welcome, AI Collaborator. This project is optimized for agentic development. To maintain consistency across sessions, you MUST follow the **Streamlined Gemini Agent Protocol**.
 
 ## 1. Context Entrypoint
-- **Legacy Backlog:** Read `.agents/TODO.md` for Phase 1 tasks. Complete these first if any remain.
 - **Active Tasks:** Run `gh issue list --assignee "@me"` to see your assigned tasks. If none, run `gh issue list` to see the backlog.
 - **History:** Run `git log -n 5` to see what was recently completed.
 - **Architecture:** Read `.agents/docs/architecture.md` to understand the code structure.
@@ -12,17 +11,17 @@ Welcome, AI Collaborator. This project is optimized for agentic development. To 
 1. **Verify Environment:** Run `./init.sh` to ensure tools (`nvim`, `gh`, `git`, etc.) are healthy.
 2. **Claim Task:** If picking a new issue, assign it to yourself: `gh issue edit <id> --add-assignee "@me"`.
 3. **Branch Out:** Create a feature branch: `git checkout -b feature/issue-<id>`.
+4. **Decompose & Sync:** Decompose the Issue into atomic steps in a local `.agents/TODO.md` file (ignored by git). Sync this breakdown to the GitHub Issue as a comment: `gh issue comment <id> --body "### Atomic Task Breakdown\n- [ ] Task 1..."`.
 
 ## 3. Execution Cycle
-1. **Implement:** Write targeted, surgical code changes.
-2. **Verify:** Run the `Test` command specified in the Issue description or `TODO.md`.
-3. **Commit:** Use conventional commits. Always include `Fixes #<id>` in the message or PR body.
+1. **Iterate:** Work through the atomic tasks in `.agents/TODO.md`.
+2. **Verify:** Run the `Test` command specified for each atomic task.
+3. **Sync Progress:** Periodically update the GitHub Issue comment or body to reflect progress.
+4. **Commit:** Use conventional commits. Always include `Fixes #<id>` in the message or PR body.
 
 ## 4. Session Shutdown
-1. **Submit Work:**
-   - **Legacy:** Mark as `[x]` in `.agents/TODO.md`.
-   - **GitHub:** Push your branch (`git push origin HEAD`) and create a PR: `gh pr create --title "[Task Name]" --body "Fixes #<id>\n\nDetails..."`.
-2. **Handoffs:** If stopping mid-task, push your branch and add a comment: `gh issue comment <id> --body "> Note: [Context for next agent]"`.
+1. **Submit Work:** Push your branch (`git push origin HEAD`) and create a PR: `gh pr create --title "[Task Name]" --body "Fixes #<id>\n\nDetails..."`.
+2. **Handoffs:** If stopping mid-task, push your branch and add a comment with the current state of `.agents/TODO.md`: `gh issue comment <id> --body "> Note: [Context for next agent]\n\n### Current Progress\n- [x] Task 1\n- [ ] Task 2..."`.
 
 ## 5. Security & Principles
 - **Root Lock:** Never read/write files outside of this directory.
