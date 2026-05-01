@@ -19,7 +19,8 @@ Welcome, AI Collaborator. This project is optimized for agentic development. To 
 
 ## 3. Execution Cycle
 1. **Iterate:** Work through the atomic tasks in `.agents/TODO.md`.
-2. **Verify:** Run the `Test` command specified for each atomic task.
+2. **Format:** Ensure all modified Lua files are formatted using `stylua`. The project uses a native autocommand on save, but you MUST manually verify the formatting or run `stylua --config-path .stylua.toml <file>` if unsure.
+3. **Verify:** Run the `Test` command specified for each atomic task.
 3. **Sync Progress:** Periodically update the GitHub Issue comment or body to reflect progress.
 4. **Commit:** Use conventional commits. Always include `Fixes #<id>` in the message or PR body.
 
