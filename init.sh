@@ -14,6 +14,22 @@ else
     echo "tree-sitter CLI: NOT FOUND (Required for Neovim 0.12 parsers)"
 fi
 
+# Check GitHub CLI
+if command -v gh >/dev/null 2>&1; then
+    echo "GitHub CLI: Found ($(gh --version | head -n 1))"
+else
+    echo "GitHub CLI: NOT FOUND (Required for task management)"
+fi
+
+# Check Git Identity
+GIT_USER=$(git config user.name || echo "MISSING")
+GIT_EMAIL=$(git config user.email || echo "MISSING")
+if [ "$GIT_USER" != "MISSING" ] && [ "$GIT_EMAIL" != "MISSING" ]; then
+    echo "Git Identity: Configured ($GIT_USER <$GIT_EMAIL>)"
+else
+    echo "Git Identity: NOT CONFIGURED (Required for pushing changes)"
+fi
+
 # Check essential paths
 [ -f "init.lua" ] && echo "init.lua: Found" || echo "init.lua: NOT FOUND"
 

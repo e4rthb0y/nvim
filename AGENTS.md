@@ -3,30 +3,33 @@
 Welcome, AI Collaborator. This project is optimized for agentic development. To maintain consistency across sessions, you MUST follow the **Streamlined Gemini Agent Protocol**.
 
 ## 1. Context Entrypoint
-- **Roadmap:** Read `.agents/TODO.md` to see the current backlog and pending tasks.
+- **Legacy Backlog:** Read `.agents/TODO.md` for Phase 1 tasks. Complete these first if any remain.
+- **Active Tasks:** Run `gh issue list --assignee "@me"` to see your assigned tasks. If none, run `gh issue list` to see the backlog.
 - **History:** Run `git log -n 5` to see what was recently completed.
 - **Architecture:** Read `.agents/docs/architecture.md` to understand the code structure.
-- **Handoffs:** Check the current task in `TODO.md` for any `> Note:` blocks left by the previous agent.
 
 ## 2. Startup Sequence
-1. **Verify Environment:** Run `./init.sh` to ensure `nvim` and `tree-sitter` CLI are healthy.
-2. **Review Backlog:** Pick the top-most unchecked task in `.agents/TODO.md`.
+1. **Verify Environment:** Run `./init.sh` to ensure tools (`nvim`, `gh`, `git`, etc.) are healthy.
+2. **Claim Task:** If picking a new issue, assign it to yourself: `gh issue edit <id> --add-assignee "@me"`.
+3. **Branch Out:** Create a feature branch: `git checkout -b feature/issue-<id>`.
 
 ## 3. Execution Cycle
 1. **Implement:** Write targeted, surgical code changes.
-2. **Verify:** Run the `Test` command specified for the task in `TODO.md`.
-3. **Commit:** Use conventional commits (e.g., `feat: implemented feature X`).
+2. **Verify:** Run the `Test` command specified in the Issue description or `TODO.md`.
+3. **Commit:** Use conventional commits. Always include `Fixes #<id>` in the message or PR body.
 
 ## 4. Session Shutdown
-1. **Update Backlog:** Mark the task as completed in `.agents/TODO.md` (e.g., change `[ ]` to `[x]`).
-2. **Leave Handoffs:** If you are stopping mid-task, add a `> Note:` block under the task in `TODO.md`.
-3. **Final Commit:** Ensure all changes are committed before ending the session.
+1. **Submit Work:**
+   - **Legacy:** Mark as `[x]` in `.agents/TODO.md`.
+   - **GitHub:** Push your branch (`git push origin HEAD`) and create a PR: `gh pr create --title "[Task Name]" --body "Fixes #<id>\n\nDetails..."`.
+2. **Handoffs:** If stopping mid-task, push your branch and add a comment: `gh issue comment <id> --body "> Note: [Context for next agent]"`.
 
 ## 5. Security & Principles
 - **Root Lock:** Never read/write files outside of this directory.
-- **No Hardcoding:** Ensure all paths are dynamically resolved (use `vim.fn.exepath`).
-- **Convention First:** Adhere to the existing Lua structure and `lazy.nvim` patterns.
-- **Native over Plugin:** Prefer Neovim 0.12 core features over adding new plugins.
+- **No Hardcoding:** Ensure all paths are dynamically resolved.
+- **Convention First:** Adhere to existing Lua structure and `lazy.nvim` patterns.
+- **PR-First:** All changes MUST be submitted via Pull Request for human review.
+- **Git Identity:** Ensure `user.name` and `user.email` are configured in the environment.
 
 ## 6. The "Principal" Checklist
 This project is a high-transparency substrate for the "Principal Engineer" (read [MANIFESTO.md](./MANIFESTO.md)). Before ending your session, ensure:
