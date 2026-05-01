@@ -1,1 +1,8 @@
-std = "luajit+nvim"
+std = "luajit+neovim"
+
+[rules]
+unused_variable = "warn"
+multiple_statements = "warn"
+shadowing = "warn"
+
+
