@@ -46,6 +46,7 @@ This is the space for work-in-progress journeys. If you are an agent or collabor
 1. **Native-First Core:** Transitioning to Neovim 0.12 `ui2`, native Treesitter, and native Paging.
 2. **High-Signal LSP:** Refinement of LSP Hover and Semantic Tokens to ensure structural clarity without highlighter crashes.
 3. **Product-Grade Standalone:** Ensuring the configuration is portable, verifiable, and documented as a standalone product.
+4. **Modular Skill Distribution:** Decoupling the `development-workflow` skill into a dedicated repository and integrating it via Git submodules to enable cross-project reuse and cleaner dependency management.
 
 ---
 
