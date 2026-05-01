@@ -4,6 +4,7 @@ local raw_servers = {
     { name = 'jdtls', auto_setup = false },
     'rust_analyzer',
     'ts_ls',
+    'denols',
     'eslint',
     'lua_ls',
     'jsonls',

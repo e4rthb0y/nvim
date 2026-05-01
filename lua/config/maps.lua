@@ -16,12 +16,6 @@ vim.keymap.set('n', 'te', ':tabedit<Return>')
 vim.keymap.set('n', 'ss', ':split<Return><C-w>w')
 vim.keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
 
--- Navigate windows
-vim.keymap.set('n', '<C-h>', '<C-w>h')
-vim.keymap.set('n', '<C-k>', '<C-w>k')
-vim.keymap.set('n', '<C-j>', '<C-w>j')
-vim.keymap.set('n', '<C-l>', '<C-w>l')
-
 -- Swipe line up/down (improved for visual/normal)
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { silent = true })
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { silent = true })
@@ -35,8 +29,13 @@ vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { silent = true })
 vim.keymap.set('t', '<A-[>', '<Esc>')
 vim.keymap.set('t', '<Esc>', '<c-\\><c-n>')
 
--- Navigatin between terminal windows
+-- Navigation between terminal windows
 vim.keymap.set('t', '<A-h>', '<c-\\><c-n><c-w>h')
 vim.keymap.set('t', '<A-j>', '<c-\\><c-n><c-w>j')
 vim.keymap.set('t', '<A-k>', '<c-\\><c-n><c-w>k')
 vim.keymap.set('t', '<A-l>', '<c-\\><c-n><c-w>l')
+
+-- Explicitly pass modified Enter keys to terminal
+vim.keymap.set('t', '<C-CR>', '<C-CR>')
+vim.keymap.set('t', '<S-CR>', '<S-CR>')
+vim.keymap.set('t', '<C-S-CR>', '<C-S-CR>')
