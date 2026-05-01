@@ -1,4 +1,4 @@
-std = "luajit+neovim"
+std = "neovim"
 
 [rules]
 unused_variable = "warn"
