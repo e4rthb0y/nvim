@@ -12,7 +12,7 @@ source ~/.agent-env.sh
 ```
 
 ### Skills & Workflows
-Refer to `.gemini/skills/github/SKILL.md` for detailed instructions on managing issues and pull requests.
+Refer to `.gemini/skills/development-workflow/SKILL.md` for detailed instructions on managing the development lifecycle.
 
 ### Core Documentation
 - **Agent Protocol**: See `AGENTS.md`.

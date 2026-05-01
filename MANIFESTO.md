@@ -19,6 +19,17 @@ We reject the "Polished Enclosed Truth." This is a **Living Laboratory**. It is 
 
 ---
 
+## 🏆 Proven Physics (Successes)
+
+Experiments that have survived the "Physics" of our workflow and are now core to the project's identity:
+
+### Gemini Development Workflow Skill
+- **Achievement:** Successfully consolidated the agent protocol and GitHub operations into a standardized, specification-compliant Gemini Skill.
+- **Impact:** Unified the "How" (Technical commands) with the "What" (Project standards) into a single, progressively disclosed context for all AI collaborators.
+- **Mechanism:** Utilizes the `agent:assigned` label for robust task tracking across bot and human accounts.
+
+---
+
 ## 🧪 The Laboratory (Active Experiments)
 
 This is the space for work-in-progress journeys. If you are an agent or collaborator, these are the "Physics" we are currently testing:
