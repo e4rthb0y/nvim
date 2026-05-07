@@ -43,6 +43,10 @@ This is a high-transparency substrate for the **Principal Engineer**. See the [M
 - `lua/plugins/`: Plugin specifications managed by `lazy.nvim`.
 - `.agents/`: Backlog and documentation for AI collaborators.
 
+## 🗺️ Coordination & Roadmap
+
+This project's development is coordinated via the [Nvim DX Lab](https://github.com/users/e4rthb0y/projects/1) project. Refer to it for the active roadmap, milestones, and task status.
+
 ## ⌨️ Essential Keybindings
 
 - `<leader>a`: Toggle Aerial (Code outline)
