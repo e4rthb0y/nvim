@@ -27,7 +27,7 @@ function M.check()
     vim.health.start('Runtime Dependencies')
     check_executable(
         'node',
-        "Node.js is required for some LSPs (like ts_ls). Install it with 'brew install node' or use nvm."
+        "Node.js is required for some LSPs (like vtsls). Install it with 'brew install node' or use nvm."
     )
     check_executable(
         'python3',
