@@ -62,8 +62,12 @@ local function set_keymaps()
                 vim.diagnostic.setloclist,
                 'Show Diagnostics'
             )
-            map('n', '[d', vim.diagnostic.goto_next, 'Next Diagnostic')
-            map('n', ']d', vim.diagnostic.goto_prev, 'Previous Diagnostic')
+            map('n', '[d', function()
+                vim.diagnostic.jump({ count = 1 })
+            end, 'Next Diagnostic')
+            map('n', ']d', function()
+                vim.diagnostic.jump({ count = -1 })
+            end, 'Previous Diagnostic')
             map(
                 'n',
                 '<leader>vws',
@@ -74,55 +78,56 @@ local function set_keymaps()
     })
 end
 
-return {
-    'neovim/nvim-lspconfig',
-    dependencies = {
-        -- Infrastructure
-        {
-            'folke/lazydev.nvim',
-            ft = 'lua',
-            opts = {
-                library = {
-                    { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
-                    { path = 'snacks.nvim', words = { 'Snacks', 'snacks' } },
-                },
-            },
-        },
-        {
-            'williamboman/mason.nvim',
-            config = function()
-                require('mason').setup({
-                    registries = {
-                        'github:mason-org/mason-registry',
-                        'github:Crashdummyy/mason-registry',
-                    },
-                })
-            end,
-        },
-        'williamboman/mason-lspconfig.nvim',
-
-        -- Autocompletion
-        'hrsh7th/nvim-cmp',
-        'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/cmp-buffer',
-        'hrsh7th/cmp-path',
-        'hrsh7th/cmp-cmdline',
-        'onsails/lspkind.nvim',
-
-        -- servers
-        'b0o/schemastore.nvim',
-
-        -- Langugage Plugins
-        'mfussenegger/nvim-jdtls', -- Java engine
-        'seblyng/roslyn.nvim', -- C# engine
+local lazydev = { 'folke/lazydev.nvim' }
+lazydev.ft = 'lua'
+lazydev.opts = {
+    library = {
+        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+        { path = 'snacks.nvim', words = { 'Snacks', 'snacks' } },
     },
-    config = function()
-        vim.lsp.log.set_level('debug')
-        vim.lsp.log_path = vim.fn.stdpath('state') .. '/lsp.log'
-        set_lspconfig()
-        set_keymaps()
-
-        require('lsp.completion').setup()
-        require('lsp.ui').setup()
-    end,
 }
+
+local mason = { 'williamboman/mason.nvim' }
+mason.config = function()
+    require('mason').setup({
+        registries = {
+            'github:mason-org/mason-registry',
+            'github:Crashdummyy/mason-registry',
+        },
+    })
+end
+
+local lspconfig = { 'neovim/nvim-lspconfig' }
+
+lspconfig.dependencies = {
+    -- Infrastructure
+    lazydev,
+    mason,
+    'williamboman/mason-lspconfig.nvim',
+
+    -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'onsails/lspkind.nvim',
+
+    -- servers
+    'b0o/schemastore.nvim',
+
+    -- Langugage Plugins
+    'mfussenegger/nvim-jdtls', -- Java engine
+    'seblyng/roslyn.nvim', -- C# engine
+}
+
+lspconfig.config = function()
+    vim.lsp.log.set_level('debug')
+    set_lspconfig()
+    set_keymaps()
+
+    require('lsp.completion').setup()
+    require('lsp.ui').setup()
+end
+
+return lspconfig
