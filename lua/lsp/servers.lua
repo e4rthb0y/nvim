@@ -3,7 +3,7 @@ local M = {}
 local raw_servers = {
     { name = 'jdtls', auto_setup = false },
     'rust_analyzer',
-    'ts_ls',
+    'vtsls',
     'denols',
     'eslint',
     'lua_ls',
