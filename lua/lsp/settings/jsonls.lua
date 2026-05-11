@@ -3,9 +3,13 @@ return {
         if fname:match('%.template$') then
             return nil
         end
-        return require('lspconfig.util').root_pattern('.git', 'package.json')(
-            fname
-        )
+        local deno_root = vim.fs.root(fname, { 'deno.json', 'deno.jsonc' })
+        local node_root = vim.fs.root(fname, { 'package.json', '.git' })
+
+        if deno_root and node_root then
+            return (#node_root >= #deno_root) and node_root or nil
+        end
+        return node_root
     end,
     settings = {
         json = {
