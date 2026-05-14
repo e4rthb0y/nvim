@@ -1,10 +1,10 @@
 return {
     'f-person/auto-dark-mode.nvim',
-    enabled = false,
+    enabled = true,
     opts = {
         set_dark_mode = function()
             local themery = require('themery')
-            themery.setThemeByName('thorn-dark-warm', true)
+            themery.setThemeByName('solarized-dark', true)
         end,
         set_light_mode = function()
             local themery = require('themery')
