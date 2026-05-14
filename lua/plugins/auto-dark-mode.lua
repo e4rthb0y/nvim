@@ -1,5 +1,6 @@
 return {
     'f-person/auto-dark-mode.nvim',
+    enabled = false,
     opts = {
         set_dark_mode = function()
             local themery = require('themery')

@@ -1,15 +1,16 @@
-local util = require('lspconfig.util')
-
 return {
-    root_dir = function(fname)
+    ---@type LSPRootHandler
+    root_dir = function(bufnr, callback)
+        local fname = vim.api.nvim_buf_get_name(bufnr)
         local deno_root = vim.fs.root(fname, { 'deno.json', 'deno.jsonc' })
         local node_root =
             vim.fs.root(fname, { 'package.json', 'tsconfig.json' })
 
         if deno_root and node_root then
-            return (#node_root >= #deno_root) and node_root or nil
+            callback((#node_root >= #deno_root) and node_root or nil)
+            return
         end
-        return node_root
+        callback(node_root)
     end,
     single_file_support = false,
     settings = {

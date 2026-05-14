@@ -4,5 +4,6 @@ std = "neovim"
 unused_variable = "warn"
 multiple_statements = "warn"
 shadowing = "warn"
+mixed_table = "allow"
 
 

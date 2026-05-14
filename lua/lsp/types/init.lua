@@ -1,0 +1,2 @@
+---@alias LSPCallback fun(root_dir: string|nil)
+---@alias LSPRootHandler fun(bufnr: integer, callback: LSPCallback)
