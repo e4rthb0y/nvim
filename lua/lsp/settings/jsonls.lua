@@ -1,4 +1,5 @@
 return {
+    ---@type LSPRootHandler
     root_dir = function(bufnr, callback)
         local fname = vim.api.nvim_buf_get_name(bufnr)
         if fname:match('%.template$') then
