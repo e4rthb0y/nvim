@@ -1,7 +1,11 @@
-local util = require('lspconfig.util')
-
 return {
-    root_dir = util.root_pattern('deno.json', 'deno.jsonc'),
+    -- @param bufnr integer
+    -- @param callback function
+    root_dir = function(bufnr, callback)
+        local fname = vim.api.nvim_buf_get_name(bufnr)
+        local root = vim.fs.root(fname, { 'deno.json', 'deno.jsonc' })
+        callback(root)
+    end,
     init_options = {
         enable = true,
         lint = true,
