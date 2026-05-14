@@ -10,10 +10,11 @@ return {
     settings = {
         Lua = {
             diagnostics = {
-                globals = { 'vim' },
+                neededFileStatus = { ['undefined-global'] = 'None' },
             },
-            workspace = {
-                checkThirdParty = false,
+            typeChecking = {
+                level = 'Information',
+                strictLevel = 'Essential',
             },
         },
     },
