@@ -4,7 +4,7 @@ local raw_formatters = {
     'stylua',
     'prettier',
     'google-java-format',
-    'black',
+    'ruff',
     'csharpier',
     'beautysh',
     'shellcheck',
