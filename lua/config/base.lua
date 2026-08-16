@@ -18,6 +18,7 @@ vim.opt.pumblend                = 0
 vim.opt.termguicolors           = true
 vim.opt.wildoptions             = 'pum'
 vim.opt.winblend                = 0
+vim.g.editorconfig              = true
 
 -- Encoding
 vim.scriptencoding              = 'utf-8'
