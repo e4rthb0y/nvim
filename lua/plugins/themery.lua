@@ -1,6 +1,22 @@
 local setup = function()
     local THEMES = {
         {
+            name = 'ayu',
+            colorscheme = 'ayu',
+            before = [[
+                vim.opt.background = 'dark'
+                require('lualine').setup({ options = { theme = 'auto' } })
+            ]],
+        },
+        {
+            name = 'vague',
+            colorscheme = 'vague',
+            before = [[
+                vim.opt.background = 'dark'
+                require('lualine').setup({ options = { theme = 'auto' } })
+            ]],
+        },
+        {
             name = 'thorn dark warm',
             colorscheme = 'thorn-dark-warm',
             before = [[

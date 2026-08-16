@@ -1,5 +1,19 @@
 return {
     {
+        'Shatur/neovim-ayu',
+        lazy = false,
+        opts = {
+            transparent = true,
+        },
+    },
+    {
+        'vague-theme/vague.nvim',
+        lazy = false,
+        opts = {
+            transparent = true,
+        },
+    },
+    {
         'jpwol/thorn.nvim',
         lazy = false,
         opts = {
