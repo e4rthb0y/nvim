@@ -9,7 +9,7 @@ local raw_servers = {
     'lua_ls',
     'jsonls',
     'html',
-    'pylsp',
+    'pyright',
     'dockerls',
     'bashls',
     'marksman',
