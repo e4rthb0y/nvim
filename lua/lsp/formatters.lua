@@ -12,7 +12,6 @@ local raw_formatters = {
     'taplo',
     'htmlbeautifier',
     'buf',
-    'rustfmt',
 }
 
 ---Returns a plain list of formatter names for Mason installation.
