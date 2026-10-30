@@ -1,8 +1,14 @@
+local LUA_MARKERS = { '.luarc.json', '.luarc.jsonc', '.git' }
+
+---@type vim.lsp.Config
 return {
-    ---@type LSPRootHandler
-    root_dir = function(bufnr)
+    root_dir = function(bufnr, on_dir)
         local fname = vim.api.nvim_buf_get_name(bufnr)
-        return vim.fs.root(fname, { '.luarc.json', '.luarc.jsonc', '.git' })
+        local root = vim.fs.root(fname, LUA_MARKERS)
+
+        if root then
+            on_dir(root)
+        end
     end,
     settings = {
         Lua = {

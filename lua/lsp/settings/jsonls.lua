@@ -1,17 +1,16 @@
+---@type vim.lsp.Config
 return {
-    ---@type LSPRootHandler
-    root_dir = function(bufnr)
+    root_dir = function(bufnr, on_dir)
         local fname = vim.api.nvim_buf_get_name(bufnr)
         if fname:match('%.template$') then
-            return nil
+            return
         end
-        local deno_root = vim.fs.root(fname, { 'deno.json', 'deno.jsonc' })
-        local node_root = vim.fs.root(fname, { 'package.json' })
 
-        if deno_root and node_root then
-            return (#node_root >= #deno_root) and node_root or nil
+        local root = vim.fs.root(fname, { '.git' }) or vim.fs.dirname(fname)
+
+        if root then
+            on_dir(root)
         end
-        return node_root
     end,
     settings = {
         json = {

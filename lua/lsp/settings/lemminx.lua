@@ -1,8 +1,12 @@
+---@type vim.lsp.Config
 return {
-    ---@type LSPRootHandler
-    root_dir = function(bufnr)
+    root_dir = function(bufnr, on_dir)
         local fname = vim.api.nvim_buf_get_name(bufnr)
-        return vim.fs.root(fname, { 'pom.xml', 'build.gradle', '.git' })
+        local root = vim.fs.root(fname, { 'pom.xml', 'build.gradle', '.git' })
+
+        if root then
+            on_dir(root)
+        end
     end,
     settings = {
         xml = {
