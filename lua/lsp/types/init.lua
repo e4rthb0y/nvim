@@ -1,1 +1,0 @@
----@alias LSPRootHandler fun(bufnr: integer): string|nil
