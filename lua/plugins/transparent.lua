@@ -15,13 +15,13 @@ return {
                 'TelescopeResultsBorder',
                 'TelescopePreviewNormal',
                 'TelescopePreviewBorder',
-                'FloatBorder',
-                'NormalFloat',
                 'NotifyBackground',
                 'NotifyBorder',
             },
             exclude_groups = {
                 'Pmenu',
+                'NormalFloat',
+                'FloatBorder',
             },
         })
     end,
