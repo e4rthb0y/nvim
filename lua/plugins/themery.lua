@@ -53,7 +53,7 @@ local setup = function()
             colorscheme = 'koda-dark',
             before = [[
                 vim.opt.background = 'dark'
-                require('lualine').setup({ options = { theme = 'auto' } })
+                require('lualine').setup({ options = { theme = 'seoul256' } })
             ]],
         },
         {
@@ -61,7 +61,7 @@ local setup = function()
             colorscheme = 'koda-light',
             before = [[
                 vim.opt.background = 'light'
-                require('lualine').setup({ options = { theme = 'auto' } })
+                require('lualine').setup({ options = { theme = 'papercolor_light' } })
             ]],
         },
         {
@@ -69,7 +69,7 @@ local setup = function()
             colorscheme = 'koda-moss',
             before = [[
                 vim.opt.background = 'dark'
-                require('lualine').setup({ options = { theme = 'auto' } })
+                require('lualine').setup({ options = { theme = 'everforest' } })
             ]],
         },
         {
@@ -77,7 +77,7 @@ local setup = function()
             colorscheme = 'koda-glade',
             before = [[
                 vim.opt.background = 'light'
-                require('lualine').setup({ options = { theme = 'auto' } })
+                require('lualine').setup({ options = { theme = 'gruvbox_light' } })
             ]],
         },
         {
@@ -142,7 +142,7 @@ local setup = function()
         {
             name = 'fastdark',
             colorscheme = 'fastdark',
-            before = [[ require('lualine').setup({ options = { theme = 'auto' } }) ]],
+            before = [[ require('lualine').setup({ options = { theme = 'onedark' } }) ]],
         },
         {
             name = 'fox carbon',
@@ -214,22 +214,6 @@ local setup = function()
             name = 'kanagawa wave',
             colorscheme = 'kanagawa-wave',
             before = [[ require('lualine').setup({ options = { theme = 'auto' } }) ]],
-        },
-        {
-            name = 'koda light',
-            colorscheme = 'koda',
-            before = [[
-                require('lualine').setup({ options = { theme = 'auto' } })
-                vim.opt.background = 'light'
-            ]],
-        },
-        {
-            name = 'koda dark',
-            colorscheme = 'koda',
-            before = [[
-                require('lualine').setup({ options = { theme = 'auto' } })
-                vim.opt.background = 'dark'
-            ]],
         },
         {
             name = 'miasma',
