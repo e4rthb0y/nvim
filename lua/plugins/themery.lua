@@ -88,7 +88,7 @@ local setup = function()
         {
             name = 'catppuccin frappe',
             colorscheme = 'catppuccin-frappe',
-            before = [[ require('lualine').setup({ options = { theme = 'palenight' } }) ]],
+            before = [[ require('lualine').setup({ options = { theme = 'auto' } }) ]],
         },
         {
             name = 'catppuccin latte',
@@ -98,12 +98,12 @@ local setup = function()
         {
             name = 'catppuccin macchiato',
             colorscheme = 'catppuccin-macchiato',
-            before = [[ require('lualine').setup({ options = { theme = 'palenight' } }) ]],
+            before = [[ require('lualine').setup({ options = { theme = 'auto' } }) ]],
         },
         {
             name = 'catppuccin mocha',
             colorscheme = 'catppuccin-mocha',
-            before = [[ require('lualine').setup({ options = { theme = 'palenight' } }) ]],
+            before = [[ require('lualine').setup({ options = { theme = 'auto' } }) ]],
         },
         {
             name = 'edge',
@@ -314,17 +314,17 @@ local setup = function()
         {
             name = 'tokyonight moon',
             colorscheme = 'tokyonight-moon',
-            before = [[ require('lualine').setup({ options = { theme = 'palenight' } }) ]],
+            before = [[ require('lualine').setup({ options = { theme = 'auto' } }) ]],
         },
         {
             name = 'tokyonight night',
             colorscheme = 'tokyonight-night',
-            before = [[ require('lualine').setup({ options = { theme = 'palenight' } }) ]],
+            before = [[ require('lualine').setup({ options = { theme = 'auto' } }) ]],
         },
         {
             name = 'tokyonight storm',
             colorscheme = 'tokyonight-storm',
-            before = [[ require('lualine').setup({ options = { theme = 'palenight' } }) ]],
+            before = [[ require('lualine').setup({ options = { theme = 'auto' } }) ]],
         },
         {
             name = 'voyager',
