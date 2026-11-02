@@ -73,6 +73,19 @@ local setup = function()
                 noremap = true,
             },
         },
+
+        -- The git_status source inherits the global `window.mappings`, including
+        -- `a` -> `add` (create a file/folder) which makes no sense in a git view.
+        -- Staging is already bound to `ga`/`A`/`gt`, so `a` is rebound here to
+        -- stage the file under the cursor, matching the documented behavior of
+        -- `:h neo-tree-git-status-source` ("most file commands except for add").
+        git_status = {
+            window = {
+                mappings = {
+                    ['a'] = 'git_add_file',
+                },
+            },
+        },
     }
 end
 
